@@ -126,6 +126,10 @@ body{
 	}
 	button{
 		margin: auto 5px;
+		&:disabled{
+			background-color: white;
+			opacity: 60%;
+		}
 	}
 }
 .carousel-btn-previous{
@@ -153,7 +157,6 @@ body{
 	transition: background-color;
 	transition-duration: 500ms;
 	transition-delay: 300ms;
-	background-color: rgba(49, 50, 53, 0.7);
 	opacity: 100%;
 	zoom: 1;
 	font-size: 50px;
@@ -167,6 +170,7 @@ body{
 	span{
 		color: rgba(255, 255, 255, 0.8);
 		transform: translateX(5px);
+		text-shadow: 5px 5px 5px rgb(0, 0, 0);
 	}
 }
 

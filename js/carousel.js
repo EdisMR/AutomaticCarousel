@@ -27,6 +27,7 @@ class carousel {
 			elm.parentNode.style.position="relative";
 			elm.parentNode.appendChild(temp);
 			elm.parentNode.querySelector(".videoController").innerHTML="<span>▶</span>"
+			elm.setAttribute("preload","metadata");
 		})
 
 		/* LISTENER DE BOTONES */
