@@ -1,3 +1,37 @@
+@charset "UTF-8";
+/*
+  Your use of the content in the files referenced here is subject to the terms of the license at https://aka.ms/fabric-assets-license
+*/
+@font-face {
+  font-family: "FabricMDL2Icons";
+  src: url("data:application/octet-stream;base64,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") format("truetype");
+}
+.ms-Icon {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+  font-family: "FabricMDL2Icons";
+  font-style: normal;
+  font-weight: normal;
+  speak: none;
+}
+
+.ms-Icon--ChevronLeftMed:before {
+  content: "";
+}
+
+.ms-Icon--ChevronRightMed:before {
+  content: "";
+}
+
+.ms-Icon--Pause:before {
+  content: "";
+}
+
+.ms-Icon--Play:before {
+  content: "";
+}
+
 /* GENERALES */
 body {
   background-color: #444;
@@ -13,14 +47,14 @@ body {
 .carousel-container {
   display: block;
   margin: 0;
-  padding: 0;
   background-color: rgba(0, 102, 255, 0.1);
+  padding: 0;
 }
 
 /* HEADER */
 .carousel-header {
   display: block;
-  margin: 0;
+  margin: 20px 0;
   padding: 0;
 }
 
@@ -36,8 +70,8 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
 }
 .carousel-items::-webkit-scrollbar {
   display: none;
@@ -59,46 +93,39 @@ body {
   margin-right: 20px;
   scroll-snap-align: center;
 }
-@media screen and (max-width: 500px) {
-  .item {
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-  }
-}
 
 .itemPart {
   width: auto;
   max-width: 50%;
   max-height: 500px;
   min-width: 200px;
+  margin-right: 20px;
 }
 .itemPart:only-child {
   max-width: 80%;
 }
 .itemPart figure {
-  width: 100%;
-  height: 100%;
   margin: 0;
   padding: 0;
+  width: 100%;
+  height: 100%;
 }
 .itemPart figure img, .itemPart figure video {
   width: 100%;
   height: 100%;
   object-fit: contain;
 }
-@media screen and (max-width: 500px) {
-  .itemPart {
-    min-height: 200px;
-    max-width: initial;
-    width: 100%;
-  }
-  .itemPart:only-child {
-    max-width: initial;
-  }
-  .itemPart figure {
-    max-height: 300px;
-  }
+
+.itemPart-MinHeight {
+  min-height: 200px;
+  max-width: initial;
+  width: 100%;
+}
+.itemPart-MinHeight:only-child {
+  max-width: initial;
+}
+.itemPart-MinHeight figure {
+  max-height: 300px;
 }
 
 /* CONTROLS */
@@ -125,6 +152,9 @@ body {
   height: 30px;
 }
 .carousel-buttons button {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
   margin: auto 5px;
 }
 .carousel-buttons button:disabled {
@@ -133,105 +163,17 @@ body {
 }
 
 .carousel-Inner-howMany {
-  display: inline-block;
+  display: inline-table;
   background-color: blanchedalmond;
   color: #111;
-  margin: auto 5px;
-  height: 30px;
+  height: 25px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
-.videoController {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  transition: background-color;
-  transition-duration: 500ms;
-  transition-delay: 300ms;
-  opacity: 100%;
-  zoom: 1;
-  font-size: 50px;
-  -webkit-user-select: none;
-          user-select: none;
-}
-.videoController:hover {
-  opacity: 100%;
-}
-.videoController:active {
-  zoom: 0.8;
-}
-.videoController span {
-  color: rgba(255, 255, 255, 0.8);
-  transform: translateX(5px);
-  text-shadow: 5px 5px 5px black;
+.carousel-items .item {
+  border: 2px solid gray;
 }
 
-/* CONTENEDOR */
-.carousel-container {
-  border: 2px solid red;
-}
-
-/* HEADER */
-.carousel-header {
-  border: 2px solid green;
-}
-
-/* BODY */
-.carousel-body {
-  border: 2px solid blue;
-}
-
-.carousel-items {
-  border: 2px solid magenta;
-}
-
-.item {
-  border: 2px solid rosybrown;
-}
-
-.itemPart {
-  border: 2px solid yellow;
-}
-
-/* CONTROLS */
-.carousel-controls {
-  border: 2px solid yellowgreen;
-}
-
-.carousel-buttons {
-  border: 2px solid aqua;
-}
-
-.carousel-btn-previous {
-  border: 2px solid aquamarine;
-}
-
-.carousel-Inner-howMany {
-  border: 2px solid cadetblue;
-}
-
-.actual {
-  border: 2px solid crimson;
-}
-
-.total {
-  border: 2px solid red;
-}
-
-.carousel-btn-pause {
-  border: 2px solid green;
-}
-
-.carousel-btn-play {
-  border: 2px solid blueviolet;
-}
-
-.carousel-btn-next {
-  border: 2px solid navy;
-}
+/*# sourceMappingURL=carousel.css.map */

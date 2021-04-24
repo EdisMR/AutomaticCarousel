@@ -15,30 +15,21 @@ class carousel {
 		/* VALORES DE CALCULOS NECESARIOS */
 		this.cuantosItems = this.items.length;
 		this.itemActual = 0;
-		this.loopValid = false; //True para un carrusel automatico, false para carrusel manual
+		this.loopValid = true; //True para un carrusel automatico, false para carrusel manual
 		this.intervalTime = 3000;
 		this.scrollBodyItems=this.itemsContainer.scrollWidth;
 		this.tamItem=this.items[0].clientWidth;
-
-		this.videos.forEach(elm=>{
-			elm.controls=false;
-			let temp=document.createElement("div");
-			temp.classList.add("videoController");
-			elm.parentNode.style.position="relative";
-			elm.parentNode.appendChild(temp);
-			elm.parentNode.querySelector(".videoController").innerHTML="<span>▶</span>"
-			elm.setAttribute("preload","metadata");
-		})
 
 		/* LISTENER DE BOTONES */
 		this.buttons[0].addEventListener("click", this.prevItem.bind(this), false);//previous
 		this.buttons[1].addEventListener("click", this.switchAuto.bind(this));//pause
 		this.buttons[2].addEventListener("click", this.switchAuto.bind(this));//play
 		this.buttons[3].addEventListener("click", this.nextItem.bind(this), false);//next
-
-		/* Controlador de videos */
-		this.body.querySelectorAll(".videoController").forEach(elm=>{
-			elm.addEventListener("click",this.multimediaSwitch.bind(this))
+		
+		/* Controlador de video */
+		this.videos.forEach(elm=>{
+			elm.controls=true;
+			elm.addEventListener("play",this.multimediaSwitch.bind(this),false);
 		})
 
 
@@ -59,7 +50,6 @@ class carousel {
 			this.observer.observe(elm);
 		})
 
-		
 	}
 
 
@@ -73,6 +63,18 @@ class carousel {
 		this.items.forEach((elm, index) => {
 			elm.dataset.carouselItem = index;
 		})
+
+		if(this.container.clientWidth<600){
+			this.items.forEach(elm=>{
+				elm.style.flexDirection="column";
+				elm.style.justifyContent="flex-start";
+				elm.style.width="100%";
+
+				elm.querySelectorAll(".itemPart").forEach(elemento=>{
+					elemento.classList.add("itemPart-MinHeight")
+				})
+			})
+		}
 	}
 
 
@@ -162,24 +164,12 @@ class carousel {
 
 
 	multimediaSwitch(evento) {
-		let itemDonde=this.items[parseInt(this.itemActual)-1];
-		let videoThis=itemDonde.querySelector("video");
-		let controller=itemDonde.querySelector(".videoController");
-
-		if(videoThis.paused){
-			controller.style.opacity="0%";
-			videoThis.play();
+		console.log(evento);
+		if(this.loopValid){
 			this.switchAuto(null,false);
-		}else{
-			if(!videoThis.paused){
-				controller.style.opacity="100%";
-				controller.innerHTML="<span>▶</span>";
-				videoThis.pause();
-			}
 		}
 	}
 }
-
 
 
 function carouselOrder() {
