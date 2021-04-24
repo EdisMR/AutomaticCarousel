@@ -10,6 +10,7 @@ class carousel {
 		this.buttons = Array.from(this.btnContainer.querySelectorAll("button"))
 		this.actual = this.btnContainer.querySelector(".carousel-innerActual");
 		this.total = this.btnContainer.querySelector(".carousel-innerTotal");
+		this.videos=Array.from(this.body.querySelectorAll("video"));
 
 		/* VALORES DE CALCULOS NECESARIOS */
 		this.cuantosItems = this.items.length;
@@ -19,6 +20,14 @@ class carousel {
 		this.scrollBodyItems=this.itemsContainer.scrollWidth;
 		this.tamItem=this.items[0].clientWidth;
 
+		this.videos.forEach(elm=>{
+			elm.controls=false;
+			let temp=document.createElement("div");
+			temp.classList.add("videoController");
+			elm.parentNode.style.position="relative";
+			elm.parentNode.appendChild(temp);
+			elm.parentNode.querySelector(".videoController").innerHTML="<span>▶</span>"
+		})
 
 		/* LISTENER DE BOTONES */
 		this.buttons[0].addEventListener("click", this.prevItem.bind(this), false);//previous
@@ -26,6 +35,10 @@ class carousel {
 		this.buttons[2].addEventListener("click", this.switchAuto.bind(this));//play
 		this.buttons[3].addEventListener("click", this.nextItem.bind(this), false);//next
 
+		/* Controlador de videos */
+		this.body.querySelectorAll(".videoController").forEach(elm=>{
+			elm.addEventListener("click",this.multimediaSwitch.bind(this))
+		})
 
 
 		/* SECUENCIA DE INICIO */
@@ -44,6 +57,8 @@ class carousel {
 		this.items.forEach(elm=>{
 			this.observer.observe(elm);
 		})
+
+		
 	}
 
 
@@ -145,8 +160,22 @@ class carousel {
 	}
 
 
-	multimediaSwitch() {
-		console.log("control de multimedia activado");
+	multimediaSwitch(evento) {
+		let itemDonde=this.items[parseInt(this.itemActual)-1];
+		let videoThis=itemDonde.querySelector("video");
+		let controller=itemDonde.querySelector(".videoController");
+
+		if(videoThis.paused){
+			controller.style.opacity="0%";
+			videoThis.play();
+			this.switchAuto(null,false);
+		}else{
+			if(!videoThis.paused){
+				controller.style.opacity="100%";
+				controller.innerHTML="<span>▶</span>";
+				videoThis.pause();
+			}
+		}
 	}
 }
 
