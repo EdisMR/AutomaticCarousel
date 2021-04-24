@@ -1,0 +1,201 @@
+/* GENERALES */
+body {
+  background-color: #444;
+  margin: 0;
+}
+
+* {
+  color: oldlace;
+  font-family: sans-serif;
+}
+
+/* CONTENEDOR */
+.carousel-container {
+  display: block;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(0, 102, 255, 0.1);
+}
+
+/* HEADER */
+.carousel-header {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* BODY */
+.carousel-body {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-items {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.carousel-items::-webkit-scrollbar {
+  display: none;
+}
+@supports (scrollbar-width: none) {
+  .carousel-items {
+    scrollbar-width: none;
+  }
+}
+
+.item {
+  flex: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  width: 90%;
+  min-height: 200px;
+  margin-right: 20px;
+  scroll-snap-align: center;
+}
+@media screen and (max-width: 500px) {
+  .item {
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+  }
+}
+
+.itemPart {
+  width: auto;
+  max-width: 50%;
+  max-height: 500px;
+  min-width: 200px;
+}
+.itemPart:only-child {
+  max-width: 80%;
+}
+.itemPart figure {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+.itemPart figure img, .itemPart figure video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+@media screen and (max-width: 500px) {
+  .itemPart {
+    min-height: 200px;
+    max-width: initial;
+    width: 100%;
+  }
+  .itemPart:only-child {
+    max-width: initial;
+  }
+  .itemPart figure {
+    max-height: 300px;
+  }
+}
+
+/* CONTROLS */
+.carousel-controls {
+  display: block;
+}
+.carousel-controls * {
+  font-size: 20px;
+}
+
+.carousel-buttons {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  justify-content: center;
+  /* user-select: none; */
+}
+.carousel-buttons button, .carousel-buttons span {
+  color: #111;
+  width: 30px;
+  height: 30px;
+}
+.carousel-buttons button {
+  margin: auto 5px;
+}
+
+.carousel-Inner-howMany {
+  display: inline-block;
+  background-color: blanchedalmond;
+  color: #111;
+  margin: auto 5px;
+  height: 30px;
+}
+
+/* CONTENEDOR */
+.carousel-container {
+  border: 2px solid red;
+}
+
+/* HEADER */
+.carousel-header {
+  border: 2px solid green;
+}
+
+/* BODY */
+.carousel-body {
+  border: 2px solid blue;
+}
+
+.carousel-items {
+  border: 2px solid magenta;
+}
+
+.item {
+  border: 2px solid rosybrown;
+}
+
+.itemPart {
+  border: 2px solid yellow;
+}
+
+/* CONTROLS */
+.carousel-controls {
+  border: 2px solid yellowgreen;
+}
+
+.carousel-buttons {
+  border: 2px solid aqua;
+}
+
+.carousel-btn-previous {
+  border: 2px solid aquamarine;
+}
+
+.carousel-Inner-howMany {
+  border: 2px solid cadetblue;
+}
+
+.actual {
+  border: 2px solid crimson;
+}
+
+.total {
+  border: 2px solid red;
+}
+
+.carousel-btn-pause {
+  border: 2px solid green;
+}
+
+.carousel-btn-play {
+  border: 2px solid blueviolet;
+}
+
+.carousel-btn-next {
+  border: 2px solid navy;
+}

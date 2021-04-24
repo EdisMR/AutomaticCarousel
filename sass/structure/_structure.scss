@@ -1,0 +1,155 @@
+$limitWidth:500px;
+
+/* GENERALES */
+body{
+	background-color: #444;
+	margin: 0;
+}
+*{
+	color: oldlace;
+	font-family: sans-serif;
+}
+
+
+/* CONTENEDOR */
+.carousel-container{
+	display: block;
+	margin: 0;
+	padding: 0;
+	background-color: rgba(0, 102, 255, 0.1);
+}
+
+
+/* HEADER */
+.carousel-header{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+
+/* BODY */
+.carousel-body{
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+.carousel-items{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	overflow-x: scroll;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+
+	&::-webkit-scrollbar{display: none;}
+	@supports(scrollbar-width: none){
+		&{scrollbar-width: none;}
+	}
+}
+
+.item{
+	flex: none;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-around;
+	width: 90%;
+	min-height: 200px;
+	margin-right: 20px;
+	scroll-snap-align: center;
+
+	@media screen and (max-width:$limitWidth){
+		flex-direction: column;
+		justify-content: flex-start;
+		width: 100%;
+
+	}
+}
+
+.itemPart{
+	width: auto;
+	max-width: 50%;
+	max-height: 500px;
+	min-width: 200px;
+	&:only-child{
+		max-width: 80%;
+	}
+	figure{
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+		img,video{
+			width: 100%;
+			height: 100%;
+			object-fit: contain;
+		}
+	}
+	
+	@media screen and (max-width:$limitWidth){
+		min-height: 200px;
+		max-width: initial;
+		width: 100%;
+		&:only-child{
+			max-width: initial;
+		}
+		figure{
+			max-height: 300px;
+		}
+	}
+}
+
+/* CONTROLS */
+.carousel-controls{
+	display: block;
+	*{
+		font-size: 20px;
+	}
+}
+
+.carousel-buttons{
+	display: flex;
+	flex-wrap: nowrap;
+	width: 100%;
+	height: 100%;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	justify-content: center;
+	/* user-select: none; */
+
+	button,span{
+		color: #111;
+		width: 30px;
+		height: 30px;
+	}
+	button{
+		margin: auto 5px;
+	}
+}
+.carousel-btn-previous{
+	
+}
+.carousel-Inner-howMany{
+	display: inline-block;
+	background-color: blanchedalmond;
+	color: #111;
+	margin: auto 5px;
+	height: 30px;
+}
+.carousel-innerActual{
+	
+}
+.carousel-innerTotal{
+	
+}
+.carousel-btn-pause{
+	
+}
+.carousel-btn-play{
+	
+}
+.carousel-btn-next{
+	
+}
