@@ -5,7 +5,7 @@ class carousel {
 		this.container = elm;
 		this.body = this.container.querySelector(".carousel-body");
 		this.itemsContainer = this.body.querySelector(".carousel-items");
-		this.items = Array.from(this.itemsContainer.querySelectorAll(".item"));
+		this.items = Array.from(this.itemsContainer.querySelectorAll(".carousel-item"));
 		this.btnContainer = this.container.querySelector(".carousel-controls");
 		this.buttons = Array.from(this.btnContainer.querySelectorAll("button"))
 		this.actual = this.btnContainer.querySelector(".carousel-innerActual");
@@ -70,7 +70,7 @@ class carousel {
 				elm.style.justifyContent="flex-start";
 				elm.style.width="100%";
 
-				elm.querySelectorAll(".itemPart").forEach(elemento=>{
+				elm.querySelectorAll(".carousel-itemPart").forEach(elemento=>{
 					elemento.classList.add("itemPart-MinHeight")
 				})
 			})
