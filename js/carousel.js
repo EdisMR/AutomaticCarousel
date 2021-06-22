@@ -153,7 +153,7 @@ class carousel {
 
 	/* Actualizar item actual, recibe datos del itersection observer */
 	actualizaActual = (entries) => {
-		entries.forEach((entry, quien) => {
+		entries.forEach((entry) => {
 			if (entry.isIntersecting) {
 				this.itemActual=(parseInt(entry.target.dataset.carouselItem))+1;
 			}
